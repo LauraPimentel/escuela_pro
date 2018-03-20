@@ -1,5 +1,5 @@
 from django.db import models
-
+from app.docente.models import Maestra
 # Create your models here.
 
 class Alumno(models.Model):
@@ -12,3 +12,4 @@ class Alumno(models.Model):
     tutor = models.CharField(max_length=50)
     direccion = models.CharField(max_length=100)
     telefono = models.CharField(max_length=10)
+    
