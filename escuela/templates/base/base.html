@@ -1,28 +1,54 @@
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
-  <head>
-    {% block extrahead %}
-    {% endblock %}
-    <meta charset="utf-8">
-    <title>{% block title %} Documento {% endblock %}</title>
-  </head>
-  <body>
 
-    {% block header %}
-    {% include 'base/header.html' %}
-    {% endblock %}
+<head>
+  <meta charset="utf-8"> {% block extrahead %} {% endblock %}
+  <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+  <title>{% block title %} Documento {% endblock %}</title>
+</head>
 
-    {% block content %}
-    <h5>Este es el contenido del archivo base</h5>
-    {% endblock %}
+<body>
 
-    {% block footer %}
-    <h5>Este es el footer</h5>
-    {% endblock %}
+  <div class="container">
+    {% block navbar %}
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <a class="navbar-brand" href="#">Abejitas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
-    {% block extrajs %}
-    {% endblock %}
+      <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Alumnos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Docentes</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Search">
+          <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
 
-  </body>
+  </div>
+  {% endblock %} {% block content %}
+  <h5>BLoque de contenido</h5> {% endblock %} {% block footer %} {% endblock %}
+
+  <script type="text/javascript" scr="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script type="text/javascript" scr="{% static 'js/bootstrap.min.js' %}"></script>
+
+  {% block extrajs %} {% endblock %}
+
+</body>
+
 </html>
