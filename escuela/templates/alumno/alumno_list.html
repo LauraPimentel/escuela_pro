@@ -1,0 +1,42 @@
+{% extends 'base/base.html' %}
+
+{% block content %}
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <td>Folio</td>
+      <td>Nombre</td>
+      <td>Apellido Paterno</td>
+      <td>Apellido Materno</td>
+      <td>Edad</td>
+      <td>Fecha Nacimiento</td>
+      <td>Tutor</td>
+      <td>Dirección</td>
+      <td>Teléfono</td>
+      <td>Maestra</td>
+    </tr>
+  </thead>
+  <tbody>
+    {% if alumno %}
+    {% for alumno in alumno %}
+    <tr>
+      <td>{{ alumno.folio }}</td>
+      <td>{{ alumno.nombre }}</td>
+      <td>{{ alumno.apellido_paterno }}</td>
+      <td>{{ alumno.apellido_materno }}</td>
+      <td>{{ alumno.edad }}</td>
+      <td>{{ alumno.fecha_nacimiento }}</td>
+      <td>{{ alumno.tutor }}</td>
+      <td>{{ alumno.direccion }}</td>
+      <td>{{ alumno.telefono }}</td>
+      <td>{{ alumno.maestra.nombre }} {{ alumno.maestra.apellidos }}</td>
+    </tr>
+    {% endfor %}
+
+    {% else %}
+    <h1>No hay registros de alumnos</h1>
+    {% endif %}
+  </tbody>
+</table>
+{% endblock %}
