@@ -8,3 +8,6 @@ class Maestra(models.Model):
     telefono = models.CharField(max_length=20)
     email = models.EmailField()
     domicilio = models.CharField(max_length=40)
+
+    def __str__(self):
+        return '{} {}'.format(self.nombre, self.apellidos)

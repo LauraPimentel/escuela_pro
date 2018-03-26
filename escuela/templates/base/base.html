@@ -41,8 +41,14 @@
     </nav>
 
   </div>
-  {% endblock %} {% block content %}
-  <h5>BLoque de contenido</h5> {% endblock %} {% block footer %} {% endblock %}
+  {% endblock %}
+
+  {% block content %}
+  <h5>BLoque de contenido</h5>
+   {% endblock %}
+
+   {% block footer %}
+   {% endblock %}
 
   <script type="text/javascript" scr="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script type="text/javascript" scr="{% static 'js/bootstrap.min.js' %}"></script>
