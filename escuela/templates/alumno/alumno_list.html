@@ -15,6 +15,7 @@
       <td>Dirección</td>
       <td>Teléfono</td>
       <td>Maestra</td>
+      <td colspan="2">Acciones</td>
     </tr>
   </thead>
   <tbody>
@@ -31,6 +32,10 @@
       <td>{{ alumno.direccion }}</td>
       <td>{{ alumno.telefono }}</td>
       <td>{{ alumno.maestra.nombre }} {{ alumno.maestra.apellidos }}</td>
+      <td>
+        <a class="btn btn-primary" href="{% url 'alumno_editar' alumno.folio %}">Editar</a>
+      </td>
+      <td><a class="btn btn-danger" href="{% url 'alumno_eliminar' alumno.folio %}">Eliminar</a></td>
     </tr>
     {% endfor %}
 
